@@ -18,6 +18,8 @@ module.exports = {
       colors: {
         primary: "#1D1D1B",
         secondary: "#1D1D1B87",
+        matego_green: "#DEDC00",
+        matego_orange: "#F47216",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

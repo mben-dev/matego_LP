@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-transparent absolute z-40 top-3 px-4 lg:px-8 py-2 ">
-      <div className="flex items-end justify-end space-x-8 w-full  px-2">
+      <div className="flex items-end justify-end space-x-8 w-full  px-9">
         {navItems.map((item) => (
           <Link
             key={item.href}

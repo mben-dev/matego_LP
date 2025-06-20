@@ -1,59 +1,71 @@
+"use client"; // Add this directive for client-side rendering
+import Bienfait from "@/components/accueil/Bienfait";
+import Instagram from "@/components/accueil/Instagram";
+import PourquoiMate from "@/components/accueil/PourquoiMate";
 /* eslint-disable @next/next/no-img-element */
 // import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import BgAcceuil from "@/components/accueil/BgAcceuil";
 
 const AcceuilPage = () => {
+  // Now you can use useState
+  const [selectedItem, setSelectedItem] = useState(0);
+
+  console.log(selectedItem);
+
+  const acceuilMenu = [
+    { href: "/", label: "Acceuil" },
+    { href: "/produit", label: "Pourquoi le Mate ?" },
+    { href: "/bienfaits", label: "Les bienfaits du produit" },
+    { href: "/instagram", label: "Retrouvez-nous sur Instagram" },
+  ];
+
+  // Function to render different content based on selected item
+  const renderContent = () => {
+    switch (selectedItem) {
+      case 0: // Acceuil
+        return <BgAcceuil />;
+
+      case 1: // Pourquoi le Mate ?
+        return <PourquoiMate />;
+
+      case 2: // Les bienfaits du produit
+        return <Bienfait />;
+
+      case 3: // Instagram
+        return <Instagram />;
+
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="h-screen w-full relative ">
       <div className=" h-screen w-full overflow-hidden relative ">
-        {/* Left Annexe - Positioned absolutely */}
-        <div
-          className="absolute z-30"
-          style={{
-            top: "0px",
-            left: "-208px",
-            width: "700px",
-            height: "600px",
-          }}
-        >
-          <img
-            src="/images/annexe_g_orange.png"
-            className="w-full h-full object-contain drop-shadow-lg"
-            alt="Annexe gauche Matego Drinks"
-          />
-        </div>
-
-        {/* Center Canette - Centered */}
-        <div className="absolute top-[42%] left-1/2 transform -translate-x-1/2  -translate-y-1/2  transition-transform  z-10">
-          <img
-            src="/images/canette_orange.png"
-            className="object-contain "
-            style={{
-              width: "700px",
-              height: "600px",
-            }}
-            alt="Canette Matego Drinks"
-          />
-        </div>
-
-        {/* Right Annexe - Positioned absolutely */}
-        <div
-          className="absolute transform  transition-transform duration-300 "
-          style={{
-            top: "170px",
-            right: "-220px",
-            width: "700px",
-            height: "600px",
-          }}
-        >
-          <img
-            src="/images/annexe_d_orange.png"
-            className="w-full h-full object-contain drop-shadow-lg"
-            alt="Annexe droite Matego Drinks"
-          />
-        </div>
+        {renderContent()}
       </div>
-      <div className="absolute bottom-10 left-10 z-30"></div>
+
+      <div className="absolute bottom-20 left-16 z-30">
+        <ul className="">
+          {acceuilMenu.map((item, index) => (
+            <li
+              key={`${item.href}-${index}`}
+              className={`flex items-center space-x-2 cursor-pointer transition-colors ${
+                selectedItem === index
+                  ? "text-primary font-semibold"
+                  : "text-secondary hover:text-primary hover:font-semibold"
+              }`}
+              onClick={() => setSelectedItem(index)}
+            >
+              <p className="text-secondary text-xl">
+                {selectedItem == index ? "—" : "•"}
+              </p>
+              <p>{item.label}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
