@@ -2,8 +2,6 @@
 import Bienfait from "@/components/accueil/Bienfait";
 import Instagram from "@/components/accueil/Instagram";
 import PourquoiMate from "@/components/accueil/PourquoiMate";
-/* eslint-disable @next/next/no-img-element */
-// import Image from "next/image";
 import React, { useState } from "react";
 import BgAcceuil from "@/components/accueil/BgAcceuil";
 

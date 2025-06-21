@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Exo } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import NavbarThemeProvider from "@/context/NavbarContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,8 +34,10 @@ export default function RootLayout({
       <body
         className={`w-full h-screen relative font-exo   ${geistSans.variable} ${geistMono.variable} ${exo.variable}`}
       >
-        <Navbar />
-        <main className="">{children}</main>
+        <NavbarThemeProvider>
+          <Navbar />
+          <main className="">{children}</main>
+        </NavbarThemeProvider>
       </body>
     </html>
   );
