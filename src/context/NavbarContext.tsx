@@ -1,5 +1,6 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { usePathname } from "next/navigation";
+import { createContext, useContext, useEffect, useState } from "react";
 
 type NavbarThemeContextType = {
   navbarTheme: string;
@@ -12,6 +13,19 @@ const NavbarThemeContext = createContext<NavbarThemeContextType | undefined>(
 
 function NavbarThemeProvider({ children }: React.PropsWithChildren<object>) {
   const [navbarTheme, setNavbarTheme] = useState("dark");
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (
+      pathname === "/" ||
+      pathname === "/produit" ||
+      pathname === "/contact"
+    ) {
+      setNavbarTheme("dark");
+    } else {
+      setNavbarTheme("light");
+    }
+  }, [pathname]);
 
   return (
     <NavbarThemeContext.Provider

@@ -87,7 +87,6 @@ const NotreHistoirePage = () => {
             {currentContent === 0 && <ContentOne />}
             {currentContent === 1 && <ContentTwo />}
             {currentContent === 2 && <ContentThree />}
-
             {/* Scroll indicator */}
             <ScrollingIndicator
               notreHistoireContents={notreHistoireContents}
