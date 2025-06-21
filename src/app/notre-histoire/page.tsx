@@ -4,6 +4,7 @@ import ContentOne from "@/components/notreHistoire/ContentOne";
 import ContentThree from "@/components/notreHistoire/ContentThree";
 import ContentTwo from "@/components/notreHistoire/ContentTwo";
 import HistoireMenu from "@/components/notreHistoire/HistoireMenu";
+import QuiSommeNous from "@/components/notreHistoire/QuiSommeNous";
 import ScrollingIndicator from "@/components/notreHistoire/ScrollingIndicator";
 import { useNavbarTheme } from "@/context/NavbarContext";
 import { useState, useEffect } from "react";
@@ -95,13 +96,7 @@ const NotreHistoirePage = () => {
           </div>
         ) : (
           // Second menu item content
-          <div className="relative w-full h-screen">
-            <img
-              src="/images/louis_matego.png"
-              className="absolute inset-0 w-[100%] h-[100%]"
-              alt=""
-            />
-          </div>
+          <QuiSommeNous />
         )}
       </div>
 
