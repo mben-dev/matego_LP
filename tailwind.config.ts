@@ -20,6 +20,7 @@ module.exports = {
         secondary: "#1D1D1B87",
         matego_green: "#DEDC00",
         matego_orange: "#F47216",
+        matego_red: "#E4003A",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
