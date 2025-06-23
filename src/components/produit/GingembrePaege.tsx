@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 
 interface GingembrePaegeProps {
@@ -12,7 +13,20 @@ const GingembrePaege: React.FC<GingembrePaegeProps> = ({
   return (
     <div className="w-full h-screen">
       <div className="flex gap-4 px-4 pt-2">
-        <img src="/images/matego_big_green.png" className="w-[650px]" alt="" />
+        {" "}
+        <motion.img
+          src="/images/matego_big_green.png"
+          className="w-[650px]"
+          alt=""
+          initial={{ x: 80, y: 60, scale: 0.5, opacity: 0 }}
+          animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+          }}
+        />
         <div className="flex flex-col gap-4">
           <div className="flex relative">
             <p className="max-w-[500px]">
