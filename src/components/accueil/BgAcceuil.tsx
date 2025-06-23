@@ -1,14 +1,32 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import ThemeSwitch from "./ThemeSwitch";
 /* eslint-disable @next/next/no-img-element */
 
 const BgAcceuil = () => {
   const [theme, setTheme] = useState("orange");
+
   return (
     <>
-      {/* Left Annexe - Positioned absolutely */}
-      <div
+      {" "}
+      {/* Left Annexe - Animated from left with bounce */}
+      <motion.div
+        key={`left-${theme}`}
+        initial={{
+          x: -400,
+          opacity: 0,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+        }}
+        transition={{
+          type: "spring",
+          damping: 15,
+          stiffness: 100,
+          delay: 0.2,
+        }}
         className="absolute z-30"
         style={{
           top: "0px",
@@ -22,10 +40,23 @@ const BgAcceuil = () => {
           className="w-full h-full object-contain drop-shadow-lg"
           alt="Annexe gauche Matego Drinks"
         />
-      </div>
-
-      {/* Center Canette - Centered */}
-      <div className="absolute top-[42%] left-1/2 transform -translate-x-1/2  -translate-y-1/2  transition-transform  z-10">
+      </motion.div>{" "}
+      {/* Center Canette - Sudden appearance animation */}
+      <motion.div
+        key={`center-${theme}`}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeOut",
+          delay: 0.8,
+        }}
+        className="absolute top-[42%] left-1/2 transform -translate-x-1/2  -translate-y-1/2  transition-transform  z-10"
+      >
         <img
           src={`/images/canette_${theme == "orange" ? "orange" : "vert"}.png`}
           className="object-contain"
@@ -35,10 +66,25 @@ const BgAcceuil = () => {
           }}
           alt="Canette Matego Drinks"
         />
-      </div>
-      <ThemeSwitch myTheme={theme} onSetMyTheme={setTheme} />
-      {/* Right Annexe - Positioned absolutely */}
-      <div
+      </motion.div>
+      <ThemeSwitch myTheme={theme} onSetMyTheme={setTheme} />{" "}
+      {/* Right Annexe - Animated from right with bounce */}
+      <motion.div
+        key={`right-${theme}`}
+        initial={{
+          x: 400,
+          opacity: 0,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+        }}
+        transition={{
+          type: "spring",
+          damping: 15,
+          stiffness: 100,
+          delay: 0.4,
+        }}
         className="absolute transform  transition-transform duration-300 "
         style={{
           top: "170px",
@@ -52,7 +98,7 @@ const BgAcceuil = () => {
           className="w-full h-full object-contain drop-shadow-lg"
           alt="Annexe droite Matego Drinks"
         />
-      </div>
+      </motion.div>
     </>
   );
 };
