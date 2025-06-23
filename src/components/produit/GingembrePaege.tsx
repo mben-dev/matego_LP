@@ -42,9 +42,22 @@ const GingembrePaege: React.FC<GingembrePaegeProps> = ({
             <h2 className="absolute right-[-40%] font-semibold text-primary text-4xl">
               7,99 €
             </h2>
-          </div>
+          </div>{" "}
           <div className="max-w-[500px] flex flex-col gap-1">
-            <p className="font-bold text-lg">Ingredients</p>
+            {" "}
+            <motion.p
+              className="font-bold text-lg"
+              initial={{ y: 20, scale: 0.8 }}
+              animate={{ y: 0, scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+                duration: 0.6,
+              }}
+            >
+              Ingredients
+            </motion.p>
             <p className="text-[##1D1D1B87] opacity-50 text-sm">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec
               lobortis metus. Aenean aliquet sem at ipsum cursus luctus.
