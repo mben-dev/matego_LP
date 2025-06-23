@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import { motion } from "framer-motion";
 import GingembrePaege from "@/components/produit/GingembrePaege";
 import HibiscusPage from "@/components/produit/HibiscusPage";
 import ManguePage from "@/components/produit/ManguePage";
@@ -13,30 +14,76 @@ const ProduitPage = () => {
 
   return (
     <div className="h-screen w-full relative overflow-hidden">
+      {" "}
       <div className="max-w-[1330px] mx-auto pt-20 ">
+        {" "}
         {selectedProduct === null && (
-          <h1 className="text-4xl uppercase font-bold">
+          <motion.h1
+            className="text-4xl uppercase font-bold"
+            key="main-title"
+            initial={{ x: 80, y: 60, scale: 0.8, opacity: 0 }}
+            animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              type: "spring",
+              stiffness: 100,
+              damping: 20,
+            }}
+          >
             nos <br /> produits
-          </h1>
+          </motion.h1>
         )}
         {selectedProduct === "gingembre" && (
-          <h1 className="text-4xl uppercase font-bold">
+          <motion.h1
+            className="text-4xl uppercase font-bold"
+            key="gingembre-title"
+            initial={{ x: 80, y: 60, scale: 0.8, opacity: 0 }}
+            animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              type: "spring",
+              stiffness: 100,
+              damping: 20,
+            }}
+          >
             MATÉ
             <br /> <span className="text-matego_green">Gingembre</span>
-          </h1>
+          </motion.h1>
         )}
         {selectedProduct === "mangue" && (
-          <h1 className="text-4xl uppercase font-bold">
+          <motion.h1
+            className="text-4xl uppercase font-bold"
+            key="mangue-title"
+            initial={{ x: 80, y: 60, scale: 0.8, opacity: 0 }}
+            animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              type: "spring",
+              stiffness: 100,
+              damping: 20,
+            }}
+          >
             MATÉ
             <br /> <span className="text-matego_orange">Mangue Passion</span>
-          </h1>
+          </motion.h1>
         )}
         {selectedProduct === "hibiscus" && (
-          <h1 className="text-4xl uppercase font-bold">
+          <motion.h1
+            className="text-4xl uppercase font-bold"
+            key="hibiscus-title"
+            initial={{ x: 80, y: 60, scale: 0.8, opacity: 0 }}
+            animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              type: "spring",
+              stiffness: 100,
+              damping: 20,
+            }}
+          >
             MATÉ
             <br />{" "}
             <span className="text-matego_red">Hibiscus Fraise Des Bois</span>
-          </h1>
+          </motion.h1>
         )}
         {!selectedProduct ? (
           <div className="flex w-full gap-10  px-4 pt-2">
