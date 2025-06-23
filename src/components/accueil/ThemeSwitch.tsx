@@ -20,9 +20,9 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
     }, 400);
   };
   return (
-    <div className="absolute  top-[50%] left-[62%] transform -translate-x-1/2  -translate-y-1/2    z-10 ">
-      <div className="flex items-start space-x-4 ">
-        {" "}
+    <div className="absolute top-[50%] left-[62%] transform -translate-x-1/2 -translate-y-1/2 z-10">
+      {" "}
+      <div className="flex items-start space-x-4">
         {/* Main Rectangle Animation */}
         <motion.div
           initial={{
@@ -42,7 +42,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
             delay: isAnimating ? 0 : 0.2,
           }}
           className={`${
-            myTheme == "orange" ? "bg-matego_orange" : "bg-matego_green"
+            myTheme == "orange" ? "bg-matego_orange " : "bg-matego_green"
           }`}
         ></motion.div>
         <div className="flex items-center space-x-2 hover:cursor-pointer">
@@ -67,10 +67,10 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
             }}
             className={`${
               myTheme == "orange" ? "text-matego_orange" : "text-matego_green"
-            } text-xl`}
+            } text-xl max-lg:text-lg`}
           >
             {myTheme == "orange" ? "Mangue, Passion" : "Gingembre"}
-          </motion.p>
+          </motion.p>{" "}
           {/* Arrow Animation */}
           <motion.img
             initial={{
@@ -93,7 +93,6 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           />
         </div>
       </div>
-
       <motion.div
         initial={{
           opacity: 0,
@@ -154,7 +153,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           }}
           className={`${
             myTheme == "orange" ? "text-matego_green" : "text-matego_orange"
-          } text-xl`}
+          } text-xl `}
         >
           {myTheme == "orange" ? "Gingembre" : "Mangue, Passion"}
         </motion.p>
