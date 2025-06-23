@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { motion } from "framer-motion";
 import ContentOne from "@/components/notreHistoire/ContentOne";
@@ -104,6 +103,7 @@ const NotreHistoirePage = () => {
         <>
           {" "}
           <motion.div
+            key={`vertical-line-${currentContent === 0 ? "fall" : "stand"}`}
             className="fixed left-16 bottom-0 h-[72%] w-1 bg-primary z-20"
             initial={{ y: "-100%" }}
             animate={{ y: 0 }}
