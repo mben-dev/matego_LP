@@ -13,7 +13,7 @@ const ContentThree = () => {
             alt=""
           />
           <div className="relative">
-            <div className="absolute bg-primary w-7 h-7 rounded-full z-20 left-[-9.4%]"></div>
+            {/* <div className="absolute bg-primary w-7 h-7 rounded-full z-20 left-[-9.4%]"></div> */}
             <p className="text-sm">
               <span className="font-bold">Louis</span>, a constaté lors de ses
               interventions dans les classes post-bac que les étudiants et
@@ -24,7 +24,7 @@ const ContentThree = () => {
         </div>
         <div className="max-w-[458px]">
           <div className="relative">
-            <div className="absolute bg-primary w-7 h-7 rounded-full z-20 left-[-9.4%]"></div>
+            {/* <div className="absolute bg-primary w-7 h-7 rounded-full z-20 left-[-9.4%]"></div> */}
             <p className="text-sm">
               Pour offrir une solution différente et plus respectueuse de la
               santé, <span className="font-bold">Louis</span> a imaginé MATEGO :
@@ -41,7 +41,7 @@ const ContentThree = () => {
             alt=""
           />
           <div className="relative">
-            <div className="absolute bg-primary w-7 h-7 rounded-full z-20 left-[-9.95%]"></div>
+            {/* <div className="absolute bg-primary w-7 h-7 rounded-full z-20 left-[-9.95%]"></div> */}
             <p className="text-sm">
               Le chemin n&apos;a pas été sans embûches. Mais la résilience fait
               partie intégrante de l&apos;ADN de MATEGO. Pour aller au bout de

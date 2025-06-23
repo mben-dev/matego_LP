@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import { motion } from "framer-motion";
 import ContentOne from "@/components/notreHistoire/ContentOne";
 import ContentThree from "@/components/notreHistoire/ContentThree";
 import ContentTwo from "@/components/notreHistoire/ContentTwo";
@@ -97,18 +98,70 @@ const NotreHistoirePage = () => {
           // Second menu item content
           <QuiSommeNous />
         )}
-      </div>
-
+      </div>{" "}
       {/* Fixed UI elements */}
       {selectedItem === 0 && (
-        <div className="fixed left-16 bottom-0 h-[72%] w-1 bg-primary z-20"></div>
+        <>
+          {" "}
+          <motion.div
+            className="fixed left-16 bottom-0 h-[72%] w-1 bg-primary z-20"
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 25,
+              duration: 1.0,
+            }}
+          />
+          {currentContent >= 0 && (
+            <motion.div
+              className="fixed left-[3.4%] top-[25.6%] bg-primary w-7 h-7 rounded-full z-20"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                duration: 0.6,
+              }}
+            />
+          )}
+          {currentContent >= 1 && (
+            <motion.div
+              className="fixed left-[3.4%] top-[37.9%] bg-primary w-7 h-7 rounded-full z-20"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                duration: 0.6,
+                delay: 0.2,
+              }}
+            />
+          )}
+          {currentContent >= 2 && (
+            <motion.div
+              className="fixed left-[3.4%] top-[50.2%] bg-primary w-7 h-7 rounded-full z-20"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+                duration: 0.6,
+                delay: 0.4,
+              }}
+            />
+          )}
+        </>
       )}
       <HistoireMenu
         notreHistoireMenu={notreHistoireMenu}
         selectedItem={selectedItem}
         setSelectedItem={setSelectedItem}
       />
-
       {/* Add some height to enable scrolling for the first menu item */}
       {selectedItem === 0 && <div className="h-[300vh] pointer-events-none" />}
     </div>
