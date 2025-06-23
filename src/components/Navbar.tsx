@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useNavbarTheme } from "@/context/NavbarContext";
+import TransitionLink from "@/components/TransitionLink";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -24,8 +24,9 @@ const Navbar = () => {
       }  px-4 lg:px-8 py-2 `}
     >
       <div className="flex items-end justify-end space-x-3 w-full  px-9">
+        {" "}
         {navItems.map((item) => (
-          <Link
+          <TransitionLink
             key={item.href}
             href={item.href}
             className={cn(
@@ -40,7 +41,7 @@ const Navbar = () => {
             )}
           >
             {item.label}
-          </Link>
+          </TransitionLink>
         ))}
       </div>
     </nav>
