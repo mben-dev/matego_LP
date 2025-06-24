@@ -39,32 +39,59 @@ const AcceuilPage = () => {
   };
 
   return (
-    <div className="h-screen w-full relative ">
-      <div className=" h-screen w-full overflow-hidden relative ">
-        {renderContent()}
+    <>
+      {/* SEO Hidden Content */}
+      <div className="sr-only">
+        <h1>MATEGO - Boisson Énergisante Naturelle au Maté</h1>
+        <p>
+          Découvrez MATEGO, la première boisson énergisante française 100%
+          naturelle à base de yerba maté. Alternative saine aux sodas, fabriquée
+          à Mulhouse, Alsace. Fondée par Louis et Mehdi.
+        </p>
+        <h2>Nos Saveurs</h2>
+        <ul>
+          <li>MATÉ Gingembre - Vitalité et fraîcheur naturelle</li>
+          <li>MATÉ Mangue Passion - Explosion de saveurs tropicales</li>
+          <li>MATÉ Hibiscus Fraise des Bois - Douceur florale authentique</li>
+        </ul>
+        <h2>Pourquoi choisir MATEGO ?</h2>
+        <p>
+          Riche en antioxydants, vitamines (A, C, B1, B2) et minéraux
+          (magnésium, calcium, fer). Énergie progressive sans crash, améliore la
+          concentration et soutient les performances physiques.
+        </p>
       </div>
 
-      <div className="absolute bottom-20 left-16 z-30">
-        <ul className="">
-          {acceuilMenu.map((item, index) => (
-            <li
-              key={`${item.href}-${index}`}
-              className={`flex items-center space-x-2 cursor-pointer transition-colors ${
-                selectedItem === index
-                  ? "text-primary font-semibold"
-                  : "text-secondary hover:text-primary hover:font-semibold"
-              }`}
-              onClick={() => setSelectedItem(index)}
-            >
-              <p className="text-secondary text-xl">
-                {selectedItem == index ? "—" : "•"}
-              </p>
-              <p>{item.label}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+      <article className="h-screen w-full relative ">
+        <section className=" h-screen w-full overflow-hidden relative ">
+          {renderContent()}
+        </section>
+
+        <nav
+          className="absolute bottom-20 left-16 z-30"
+          aria-label="Navigation des sections"
+        >
+          <ul className="">
+            {acceuilMenu.map((item, index) => (
+              <li
+                key={`${item.href}-${index}`}
+                className={`flex items-center space-x-2 cursor-pointer transition-colors ${
+                  selectedItem === index
+                    ? "text-primary font-semibold"
+                    : "text-secondary hover:text-primary hover:font-semibold"
+                }`}
+                onClick={() => setSelectedItem(index)}
+              >
+                <p className="text-secondary text-xl" aria-hidden="true">
+                  {selectedItem == index ? "—" : "•"}
+                </p>
+                <p>{item.label}</p>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </article>
+    </>
   );
 };
 

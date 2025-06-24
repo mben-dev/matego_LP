@@ -16,7 +16,12 @@ const Instagram = () => {
           <p className="mt-4 mb-2 text-secondary ">
             Visiter notre compte instagram
           </p>
-          <Button className="bg-primary text-white font-extralight rounded-none relative overflow-hidden">
+          <Button
+            className="bg-primary text-white font-extralight rounded-none relative overflow-hidden"
+            onClick={() =>
+              window.open("https://www.instagram.com/mategodrinks/", "_blank")
+            }
+          >
             <motion.span
               className="inline-block"
               initial={{ opacity: 0 }}

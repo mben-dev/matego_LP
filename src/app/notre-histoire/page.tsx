@@ -78,93 +78,143 @@ const NotreHistoirePage = () => {
   }, [selectedItem]);
 
   return (
-    <div className="h-screen w-full relative">
-      <div className="fixed inset-0 z-10 flex ">
-        {/* Dynamic content that changes based on menu selection and scroll */}
-        {selectedItem === 0 ? (
-          // First menu item content (changes with scroll)
-          <div className="min-w-[1330px] mx-auto pt-[13%] ">
-            {currentContent === 0 && <ContentOne />}
-            {currentContent === 1 && <ContentTwo />}
-            {currentContent === 2 && <ContentThree />}
-            {/* Scroll indicator */}
-            <ScrollingIndicator
-              notreHistoireContents={notreHistoireContents}
-              currentContent={currentContent}
+    <>
+      {/* SEO Hidden Content */}
+      <div className="sr-only">
+        <h1>
+          Notre Histoire MATEGO - Louis & Mehdi, Fondateurs de la Révolution
+          Maté
+        </h1>
+        <p>
+          Découvrez l&apos;histoire passionnante de MATEGO, née de la vision de
+          deux amis déterminés à révolutionner le monde des boissons
+          énergisantes.
+        </p>
+
+        <h2>Le Début de l&apos;Aventure</h2>
+        <p>
+          Louis, lors de ses interventions dans les classes post-bac, a constaté
+          que les étudiants et jeunes actifs étaient souvent accros aux sodas et
+          boissons énergisantes chimiques.
+        </p>
+
+        <h2>La Vision MATEGO</h2>
+        <p>
+          Pour offrir une solution différente et plus respectueuse de la santé,
+          Louis a imaginé MATEGO : une boisson énergisante 100% naturelle, à
+          base de maté.
+        </p>
+
+        <h2>L&apos;Équipe Fondatrice</h2>
+        <p>
+          Mehdi, ami et collaborateur de choix, apporte sa touche créative avec
+          son agence One Com pour donner une identité forte à MATEGO.
+        </p>
+
+        <h2>Qui Sommes-Nous ?</h2>
+        <p>
+          Deux potes passionnés, Louis et Mehdi, unis par une mission commune :
+          proposer une alternative saine et naturelle aux boissons énergisantes
+          traditionnelles.
+        </p>
+
+        <h3>Valeurs MATEGO</h3>
+        <p>
+          Transparence, qualité, naturalité et respect de la santé sont au cœur
+          de notre démarche. Fabriqué avec amour à Mulhouse, Alsace.
+        </p>
+      </div>
+
+      <div className="h-screen w-full relative">
+        <div className="fixed inset-0 z-10 flex ">
+          {/* Dynamic content that changes based on menu selection and scroll */}
+          {selectedItem === 0 ? (
+            // First menu item content (changes with scroll)
+            <div className="min-w-[1330px] mx-auto pt-[13%] ">
+              {currentContent === 0 && <ContentOne />}
+              {currentContent === 1 && <ContentTwo />}
+              {currentContent === 2 && <ContentThree />}
+              {/* Scroll indicator */}
+              <ScrollingIndicator
+                notreHistoireContents={notreHistoireContents}
+                currentContent={currentContent}
+              />
+            </div>
+          ) : (
+            // Second menu item content
+            <QuiSommeNous />
+          )}
+        </div>{" "}
+        {/* Fixed UI elements */}
+        {selectedItem === 0 && (
+          <>
+            {" "}
+            <motion.div
+              key={`vertical-line-${currentContent === 0 ? "fall" : "stand"}`}
+              className="fixed left-16 bottom-0 h-[72%] w-1 bg-primary z-20"
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 25,
+                duration: 1.0,
+              }}
             />
-          </div>
-        ) : (
-          // Second menu item content
-          <QuiSommeNous />
+            {currentContent >= 0 && (
+              <motion.div
+                className="fixed left-[3.4%] top-[25.6%] bg-primary w-7 h-7 rounded-full z-20"
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                  duration: 0.6,
+                }}
+              />
+            )}
+            {currentContent >= 1 && (
+              <motion.div
+                className="fixed left-[3.4%] top-[37.9%] bg-primary w-7 h-7 rounded-full z-20"
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                  duration: 0.6,
+                  delay: 0.2,
+                }}
+              />
+            )}
+            {currentContent >= 2 && (
+              <motion.div
+                className="fixed left-[3.4%] top-[50.2%] bg-primary w-7 h-7 rounded-full z-20"
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                  duration: 0.6,
+                  delay: 0.4,
+                }}
+              />
+            )}
+          </>
         )}
-      </div>{" "}
-      {/* Fixed UI elements */}
-      {selectedItem === 0 && (
-        <>
-          {" "}
-          <motion.div
-            key={`vertical-line-${currentContent === 0 ? "fall" : "stand"}`}
-            className="fixed left-16 bottom-0 h-[72%] w-1 bg-primary z-20"
-            initial={{ y: "-100%" }}
-            animate={{ y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 200,
-              damping: 25,
-              duration: 1.0,
-            }}
-          />
-          {currentContent >= 0 && (
-            <motion.div
-              className="fixed left-[3.4%] top-[25.6%] bg-primary w-7 h-7 rounded-full z-20"
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-                duration: 0.6,
-              }}
-            />
-          )}
-          {currentContent >= 1 && (
-            <motion.div
-              className="fixed left-[3.4%] top-[37.9%] bg-primary w-7 h-7 rounded-full z-20"
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-                duration: 0.6,
-                delay: 0.2,
-              }}
-            />
-          )}
-          {currentContent >= 2 && (
-            <motion.div
-              className="fixed left-[3.4%] top-[50.2%] bg-primary w-7 h-7 rounded-full z-20"
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-                duration: 0.6,
-                delay: 0.4,
-              }}
-            />
-          )}
-        </>
-      )}
-      <HistoireMenu
-        notreHistoireMenu={notreHistoireMenu}
-        selectedItem={selectedItem}
-        setSelectedItem={setSelectedItem}
-      />
-      {/* Add some height to enable scrolling for the first menu item */}
-      {selectedItem === 0 && <div className="h-[300vh] pointer-events-none" />}
-    </div>
+        <HistoireMenu
+          notreHistoireMenu={notreHistoireMenu}
+          selectedItem={selectedItem}
+          setSelectedItem={setSelectedItem}
+        />
+        {/* Add some height to enable scrolling for the first menu item */}
+        {selectedItem === 0 && (
+          <div className="h-[300vh] pointer-events-none" />
+        )}
+      </div>
+    </>
   );
 };
 

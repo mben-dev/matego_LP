@@ -1,8 +1,31 @@
+import { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm";
 import Contacts from "@/components/contact/Contacts";
 import Map from "@/components/contact/Map";
 import Socials from "@/components/contact/Socials";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Contact MATEGO | Commandez vos Boissons Maté à Mulhouse, Alsace",
+  description:
+    "Contactez MATEGO pour commander nos boissons énergisantes naturelles au maté. Particuliers, professionnels, associations - nous livrons à Mulhouse et dans toute l'Alsace.",
+  keywords:
+    "contact matego, commander mate mulhouse, livraison boisson mate alsace, contact entreprise matego, acheter mate gingembre mangue hibiscus",
+  openGraph: {
+    title: "Contact MATEGO | Commandez vos Boissons Maté",
+    description:
+      "Contactez-nous pour commander MATEGO, la boisson énergisante naturelle. Livraison Mulhouse, Alsace.",
+    url: "https://www.matego.fr/contact",
+    images: [
+      {
+        url: "/images/matego_big_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact MATEGO - Boisson mate naturelle Mulhouse",
+      },
+    ],
+  },
+};
 
 const ContactPage = () => {
   return (
