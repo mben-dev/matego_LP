@@ -9,7 +9,7 @@ const ProductImage2 = ({ setSelectedProduct }: ProductImage2Props) => {
   return (
     <div className="flex flex-col gap-4">
       <img
-        src="/images/produit2.png"
+        src="/images/produit2.webp"
         className="w-[400px] cursor-pointer hover:opacity-80 transition-opacity"
         alt=""
         onClick={() => setSelectedProduct("mangue")}

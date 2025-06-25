@@ -15,8 +15,7 @@ const PageLoader = ({ isVisible }: PageLoaderProps) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-white"
-    >
+      className="fixed inset-0 z-50 flex items-center justify-center bg-white">
       {/* Pulsing Logo */}
       <motion.div
         animate={{
@@ -28,11 +27,10 @@ const PageLoader = ({ isVisible }: PageLoaderProps) => {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="flex items-center justify-center"
-      >
+        className="flex items-center justify-center">
         {" "}
         <Image
-          src="/images/matego_big_logo.png"
+          src="/images/matego_big_logo.webp"
           alt="Matego Logo"
           width={128}
           height={128}
@@ -45,8 +43,7 @@ const PageLoader = ({ isVisible }: PageLoaderProps) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
-        className="absolute bottom-1/3 text-lg font-medium text-gray-600"
-      >
+        className="absolute bottom-1/3 text-lg font-medium text-gray-600">
         Chargement...
       </motion.p>
 

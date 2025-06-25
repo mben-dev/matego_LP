@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://www.matego.fr/produit",
     images: [
       {
-        url: "/images/matego_trio.png",
+        url: "/images/matego_trio.webp",
         width: 1200,
         height: 630,
         alt: "Les trois saveurs MATEGO : Gingembre, Mangue Passion, Hibiscus Fraise",

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "MATEGO",
     images: [
       {
-        url: "/images/matego_big_logo.png",
+        url: "/images/matego_big_logo.webp",
         width: 1200,
         height: 630,
         alt: "MATEGO - Boisson énergisante naturelle au maté",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "MATEGO - Boisson Énergisante Naturelle au Maté",
     description:
       "L'alternative 100% naturelle aux sodas et energy drinks chimiques.",
-    images: ["/images/matego_big_logo.png"],
+    images: ["/images/matego_big_logo.webp"],
   },
   robots: {
     index: true,
@@ -90,8 +90,8 @@ export default function RootLayout({
               description:
                 "Boisson énergisante 100% naturelle à base de yerba maté",
               url: "https://www.matego.fr",
-              logo: "https://www.matego.fr/images/matego_big_logo.png",
-              image: "https://www.matego.fr/images/matego_trio.png",
+              logo: "https://www.matego.fr/images/matego_big_logo.webp",
+              image: "https://www.matego.fr/images/matego_trio.webp",
               founder: [
                 {
                   "@type": "Person",
@@ -144,8 +144,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`w-full h-screen relative font-exo   ${geistSans.variable} ${geistMono.variable} ${exo.variable}`}
-      >
+        className={`w-full h-screen relative font-exo   ${geistSans.variable} ${geistMono.variable} ${exo.variable}`}>
         <ClientWrapper>
           <NavigationProvider>
             <NavbarThemeProvider>

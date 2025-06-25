@@ -33,10 +33,9 @@ const BgAcceuil = () => {
           left: "-208px",
           width: "700px",
           height: "600px",
-        }}
-      >
+        }}>
         <img
-          src={`/images/annexe_g_${theme == "orange" ? "orange" : "vert"}.png`}
+          src={`/images/annexe_g_${theme == "orange" ? "orange" : "vert"}.webp`}
           className="w-full h-full object-contain drop-shadow-lg"
           alt="Annexe gauche Matego Drinks"
         />
@@ -55,10 +54,9 @@ const BgAcceuil = () => {
           ease: "easeOut",
           delay: 0.8,
         }}
-        className="absolute top-[42%] left-1/2 transform -translate-x-1/2  -translate-y-1/2  transition-transform  z-10"
-      >
+        className="absolute top-[42%] left-1/2 transform -translate-x-1/2  -translate-y-1/2  transition-transform  z-10">
         <img
-          src={`/images/canette_${theme == "orange" ? "orange" : "vert"}.png`}
+          src={`/images/canette_${theme == "orange" ? "orange" : "vert"}.webp`}
           className="object-contain"
           style={{
             width: "700px",
@@ -91,10 +89,9 @@ const BgAcceuil = () => {
           right: "-220px",
           width: "700px",
           height: "600px",
-        }}
-      >
+        }}>
         <img
-          src={`/images/annexe_d_${theme == "orange" ? "orange" : "vert"}.png`}
+          src={`/images/annexe_d_${theme == "orange" ? "orange" : "vert"}.webp`}
           className="w-full h-full object-contain drop-shadow-lg"
           alt="Annexe droite Matego Drinks"
         />

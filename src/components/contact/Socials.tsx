@@ -9,10 +9,9 @@ const Socials = () => {
       <a
         href="#"
         className="group relative overflow-hidden rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3 p-1 hover:shadow-xl hover:shadow-blue-500/25 hover:drop-shadow-lg"
-        aria-label="Suivez MATEGO sur LinkedIn"
-      >
+        aria-label="Suivez MATEGO sur LinkedIn">
         <img
-          src="/images/linkedin-logo.png"
+          src="/images/linkedin-logo.webp"
           alt="LinkedIn MATEGO"
           className="transition-all duration-300 group-hover:brightness-110 group-hover:contrast-125 group-hover:drop-shadow-2xl"
         />
@@ -23,10 +22,9 @@ const Socials = () => {
       <a
         href="#"
         className="group relative overflow-hidden rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3 p-1 hover:shadow-xl hover:shadow-green-500/25 hover:drop-shadow-lg"
-        aria-label="Lien Vim MATEGO"
-      >
+        aria-label="Lien Vim MATEGO">
         <img
-          src="/images/vim-logo.png"
+          src="/images/vim-logo.webp"
           alt="Vim MATEGO"
           className="transition-all duration-300 group-hover:brightness-110 group-hover:contrast-125 group-hover:drop-shadow-2xl"
         />
@@ -39,10 +37,9 @@ const Socials = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="group relative overflow-hidden rounded-lg transition-all duration-300 hover:scale-110 hover:rotate-3 p-1 hover:shadow-xl hover:shadow-pink-500/25 hover:drop-shadow-lg"
-        aria-label="Suivez MATEGO sur Instagram @mategodrinks"
-      >
+        aria-label="Suivez MATEGO sur Instagram @mategodrinks">
         <img
-          src="/images/instagram-logo.png"
+          src="/images/instagram-logo.webp"
           alt="Instagram MATEGO @mategodrinks"
           className="transition-all duration-300 group-hover:brightness-110 group-hover:contrast-125 group-hover:drop-shadow-2xl"
         />

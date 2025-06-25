@@ -7,15 +7,15 @@ const PourquoiMate = () => {
 
   const carrouselItems = [
     {
-      src: "/images/matte_s1.png",
+      src: "/images/matte_s1.webp",
       alt: "Image 1",
     },
     {
-      src: "/images/matte_s2.png",
+      src: "/images/matte_s2.webp",
       alt: "Image 2",
     },
     {
-      src: "/images/matte_s3.png",
+      src: "/images/matte_s3.webp",
       alt: "Image 3",
     },
   ];
@@ -59,7 +59,7 @@ const PourquoiMate = () => {
         </div>
         <img
           className="absolute bottom-[80px] right-[-20px] z-0 w-[500px] "
-          src="/images/robot.png"
+          src="/images/robot.webp"
           alt=""
         />
       </div>

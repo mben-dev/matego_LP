@@ -3,9 +3,9 @@ import React from "react";
 
 const Bienfait = () => {
   const caracteristiques = [
-    { imgUrl: "/images/cara1.png", label: "énergisante" },
-    { imgUrl: "/images/cara2.png", label: "Naturelle" },
-    { imgUrl: "/images/cara3.png", label: "aromatisé naturellement " },
+    { imgUrl: "/images/cara1.webp", label: "énergisante" },
+    { imgUrl: "/images/cara2.webp", label: "Naturelle" },
+    { imgUrl: "/images/cara3.webp", label: "aromatisé naturellement " },
   ];
 
   return (
@@ -24,8 +24,7 @@ const Bienfait = () => {
             {caracteristiques.map((item, index) => (
               <div
                 className="flex flex-col items-center gap-3"
-                key={`${item.label}-${index}`}
-              >
+                key={`${item.label}-${index}`}>
                 <img src={item.imgUrl} alt={item.label} className="w-[150px]" />
                 <p className="text-primary text-lg font-semibold mt-2">
                   {item.label}
@@ -36,12 +35,12 @@ const Bienfait = () => {
         </div>
         <div className="w-full h-screen  z-10">
           <img
-            src="/images/bienfait_g.png"
+            src="/images/bienfait_g.webp"
             className="w-[400px] absolute top-0 left-0"
             alt=""
           />
           <img
-            src="/images/bienfait_d.png"
+            src="/images/bienfait_d.webp"
             className="w-[450px] h-[360px] absolute bottom-0 right-7"
             alt=""
           />

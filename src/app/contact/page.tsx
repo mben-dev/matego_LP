@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "https://www.matego.fr/contact",
     images: [
       {
-        url: "/images/matego_big_logo.png",
+        url: "/images/matego_big_logo.webp",
         width: 1200,
         height: 630,
         alt: "Contact MATEGO - Boisson mate naturelle Mulhouse",

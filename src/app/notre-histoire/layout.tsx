@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://www.matego.fr/notre-histoire",
     images: [
       {
-        url: "/images/louis_matego.png",
+        url: "/images/louis_matego.webp",
         width: 1200,
         height: 630,
         alt: "Louis et Mehdi, fondateurs de MATEGO",

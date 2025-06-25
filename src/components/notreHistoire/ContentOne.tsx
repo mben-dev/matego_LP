@@ -8,7 +8,7 @@ const ContentOne = () => {
         {" "}
         <div className="max-w-[458px]">
           <img
-            src="/images/2023.png"
+            src="/images/2023.webp"
             className="float-left w-20 ml-2 mr-3 mt-2.5 mb-1 pt-1 relative z-30"
             alt=""
           />
@@ -25,13 +25,13 @@ const ContentOne = () => {
           </div>
         </div>
         <img
-          src="/images/coca_trio.png"
+          src="/images/coca_trio.webp"
           className="w-[458px] h-[482px] mt-4"
           alt=""
         />
       </div>
       <img
-        src="/images/three_drinks.png"
+        src="/images/three_drinks.webp"
         className="w-[475px] absolute top-[-40%] right-[-6.3%] z-10"
         alt=""
       />

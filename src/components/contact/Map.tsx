@@ -4,7 +4,7 @@ import React from "react";
 const Map = () => {
   return (
     <img
-      src="/images/map.png"
+      src="/images/map.webp"
       className="absolute left-[41.1%] h-screen"
       alt=""
     />

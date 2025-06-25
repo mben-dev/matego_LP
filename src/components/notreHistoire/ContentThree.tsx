@@ -8,7 +8,7 @@ const ContentThree = () => {
         {" "}
         <div className="max-w-[458px]">
           <img
-            src="/images/2023.png"
+            src="/images/2023.webp"
             className="float-left w-20 mr-4 mb-1 pt-1"
             alt=""
           />
@@ -36,7 +36,7 @@ const ContentThree = () => {
         </div>
         <div className="max-w-[440px]">
           <img
-            src="/images/2025.png"
+            src="/images/2025.webp"
             className="float-left w-20 mr-4 mb-1 pt-1"
             alt=""
           />
@@ -54,13 +54,13 @@ const ContentThree = () => {
           </div>
         </div>
         <img
-          src="/images/mehdi_notre_histoire.png"
+          src="/images/mehdi_notre_histoire.webp"
           className=" h-[221px] mt-2"
           alt=""
         />
       </div>
       <img
-        src="/images/mehdi.png"
+        src="/images/mehdi.webp"
         className="w-[680px] absolute bottom-[-4%] right-[-7.2%] z-10"
         alt=""
       />

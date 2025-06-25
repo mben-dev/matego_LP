@@ -8,7 +8,7 @@ const ContentTwo = () => {
         {" "}
         <div className="max-w-[458px]">
           <img
-            src="/images/2023.png"
+            src="/images/2023.webp"
             className="float-left w-20 mr-4 mb-1 pt-1"
             alt=""
           />
@@ -35,13 +35,13 @@ const ContentTwo = () => {
           </div>
         </div>
         <img
-          src="/images/matego_big_logo.png"
+          src="/images/matego_big_logo.webp"
           className="w-[140px] h-[350px] mt-4 translate-x-[110%]"
           alt=""
         />
       </div>
       <img
-        src="/images/louis.png"
+        src="/images/louis.webp"
         className="w-[800px] absolute bottom-[-4%] right-[5%] z-10"
         alt=""
       />

@@ -14,8 +14,7 @@ const PageTransitionLoader = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-white"
-        >
+          className="fixed inset-0 z-50 flex items-center justify-center bg-white">
           {/* Pulsing Logo */}
           <motion.div
             animate={{
@@ -27,10 +26,9 @@ const PageTransitionLoader = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="flex items-center justify-center"
-          >
+            className="flex items-center justify-center">
             <Image
-              src="/images/matego_big_logo.png"
+              src="/images/matego_big_logo.webp"
               alt="Matego Logo"
               width={128}
               height={128}

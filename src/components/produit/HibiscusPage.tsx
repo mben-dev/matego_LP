@@ -14,7 +14,7 @@ const HibiscusPage: React.FC<HibiscusPageProps> = ({
     <div className="w-full h-screen">
       <div className="flex gap-4 px-4 pt-2">
         <motion.img
-          src="/images/matego_big_hib.png"
+          src="/images/matego_big_hib.webp"
           className="w-[650px]"
           alt=""
           initial={{ x: 80, y: 60, scale: 0.5, opacity: 0 }}
@@ -52,8 +52,7 @@ const HibiscusPage: React.FC<HibiscusPageProps> = ({
                 stiffness: 400,
                 damping: 10,
                 duration: 0.6,
-              }}
-            >
+              }}>
               Ingredients
             </motion.p>
             <p className="text-[##1D1D1B87] opacity-50 text-sm">
@@ -67,10 +66,9 @@ const HibiscusPage: React.FC<HibiscusPageProps> = ({
           <div className="flex gap-4 mt-[-2%]">
             <div
               className="space-y-2"
-              onClick={() => onSetSelectedProduct("gingembre")}
-            >
+              onClick={() => onSetSelectedProduct("gingembre")}>
               <img
-                src="/images/mate_gingembre_sm.png"
+                src="/images/mate_gingembre_sm.webp"
                 className="w-[150px] h-[150px] cursor-pointer hover:opacity-80 transition-opacity"
                 alt=""
               />
@@ -81,10 +79,9 @@ const HibiscusPage: React.FC<HibiscusPageProps> = ({
             </div>
             <div
               className="space-y-2"
-              onClick={() => onSetSelectedProduct("mangue")}
-            >
+              onClick={() => onSetSelectedProduct("mangue")}>
               <img
-                src="/images/mate_mangue_sm.png"
+                src="/images/mate_mangue_sm.webp"
                 className="w-[150px] h-[150px] cursor-pointer hover:opacity-80 transition-opacity"
                 alt=""
               />
@@ -97,17 +94,17 @@ const HibiscusPage: React.FC<HibiscusPageProps> = ({
         </div>
       </div>
       <img
-        src="/images/fraise_emo.png"
+        src="/images/fraise_emo.webp"
         className="absolute left-[-1%] top-[22%] p-0 m-0"
         alt=""
       />
       <img
-        src="/images/hibiscus_emo1.png"
+        src="/images/hibiscus_emo1.webp"
         className="absolute right-[-0.9%] bottom-[-0.9%] p-0 m-0"
         alt=""
       />
       <img
-        src="/images/hibiscus_emo2.png"
+        src="/images/hibiscus_emo2.webp"
         className="absolute right-[-1%] bottom-[1%] p-0 m-0"
         alt=""
       />

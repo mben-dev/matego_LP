@@ -9,7 +9,7 @@ const QuiSommeNous = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <img
-        src="/images/louis_matego.png"
+        src="/images/louis_matego.webp"
         className={`absolute inset-0 w-[100%] h-[100%] transition-all duration-500 ease-in-out ${
           hoveredPoint === 1
             ? "scale-[2] origin-[18%_40%]"
@@ -23,19 +23,17 @@ const QuiSommeNous = () => {
       {hoveredPoint === null && (
         <div
           className="absolute top-[27%] right-[62%] bg-white w-4 h-4 rounded-full cursor-pointer z-10 hover:scale-125 transition-transform"
-          onMouseEnter={() => setHoveredPoint(1)}
-        ></div>
+          onMouseEnter={() => setHoveredPoint(1)}></div>
       )}
       {/* first point content */}
       {hoveredPoint === 1 && (
         <div
           className="flex flex-col text-white"
-          onMouseLeave={() => setHoveredPoint(null)}
-        >
+          onMouseLeave={() => setHoveredPoint(null)}>
           <div className="absolute top-[30%] right-[40%] z-20">
             <div className="relative min-w-[400px]">
               <img
-                src="/images/mehdi_name.png"
+                src="/images/mehdi_name.webp"
                 className="w-24 float-right absolute right-[43%] top-[-20%]"
                 alt=""
               />
@@ -59,19 +57,17 @@ const QuiSommeNous = () => {
       {hoveredPoint === null && (
         <div
           className="absolute top-[30%] right-[32%] bg-white w-4 h-4 rounded-full cursor-pointer z-10 hover:scale-125 transition-transform"
-          onMouseEnter={() => setHoveredPoint(2)}
-        ></div>
+          onMouseEnter={() => setHoveredPoint(2)}></div>
       )}
       {/* second point content */}
       {hoveredPoint === 2 && (
         <div
           className="flex flex-col text-white"
-          onMouseLeave={() => setHoveredPoint(null)}
-        >
+          onMouseLeave={() => setHoveredPoint(null)}>
           <div className="absolute top-[45%] right-[30%] z-20">
             <div className="relative ">
               <img
-                src="/images/louis_name.png"
+                src="/images/louis_name.webp"
                 className="w-24 float-right absolute right-[60%] top-[-20%]"
                 alt=""
               />

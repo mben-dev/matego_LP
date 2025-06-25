@@ -20,14 +20,12 @@ const Instagram = () => {
             className="bg-primary text-white font-extralight rounded-none relative overflow-hidden"
             onClick={() =>
               window.open("https://www.instagram.com/mategodrinks/", "_blank")
-            }
-          >
+            }>
             <motion.span
               className="inline-block"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 0 }}
-            >
+              transition={{ delay: 1.2, duration: 0 }}>
               {"Découvrez-nous sur Instagram ".split("").map((char, index) => (
                 <motion.span
                   key={index}
@@ -36,8 +34,7 @@ const Instagram = () => {
                   transition={{
                     delay: 1.2 + index * 0.05,
                     duration: 0.1,
-                  }}
-                >
+                  }}>
                   {char}
                 </motion.span>
               ))}
@@ -50,13 +47,12 @@ const Instagram = () => {
                 duration: 0.6,
                 delay: 0.6,
                 ease: "easeOut",
-              }}
-            >
-              <img src="/images/arrow-up-right.png" className="w-4" alt="" />
+              }}>
+              <img src="/images/arrow-up-right.webp" className="w-4" alt="" />
             </motion.span>
           </Button>{" "}
           <motion.img
-            src="/images/woman_basket.png"
+            src="/images/woman_basket.webp"
             className="rounded-br-lg w-[200px] absolute top-[-350px] left-[-70px]"
             alt=""
             initial={{ scale: 0 }}
@@ -64,7 +60,7 @@ const Instagram = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           />
           <motion.img
-            src="/images/corner_duo_canette.png"
+            src="/images/corner_duo_canette.webp"
             className=" w-[80px] absolute bottom-[42.5%] left-[-4.78%]"
             alt=""
             initial={{ scale: 0 }}
@@ -72,7 +68,7 @@ const Instagram = () => {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           />
           <motion.img
-            src="/images/instagram.png"
+            src="/images/instagram.webp"
             className="rounded-xl w-[450px] absolute top-[-280px] left-[182px]"
             alt=""
             initial={{ scale: 0 }}
@@ -80,7 +76,7 @@ const Instagram = () => {
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
           />{" "}
           <motion.img
-            src="/images/iphone.png"
+            src="/images/iphone.webp"
             className="rounded-xl w-[450px] absolute top-[-120px] left-[33%]"
             alt=""
             initial={{ y: "100vh" }}
@@ -94,7 +90,7 @@ const Instagram = () => {
             }}
           />{" "}
           <motion.img
-            src="/images/man_alone.png"
+            src="/images/man_alone.webp"
             className="rounded-xl w-[250px] absolute top-[70px] left-[60%]"
             alt=""
             initial={{ scale: 0 }}
@@ -102,7 +98,7 @@ const Instagram = () => {
             transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
           />
           <motion.img
-            src="/images/matego_trio.png"
+            src="/images/matego_trio.webp"
             className="rounded-xl w-[150px] absolute top-[-150px] right-[10%]"
             alt=""
             initial={{ scale: 0 }}
@@ -110,7 +106,7 @@ const Instagram = () => {
             transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
           />
           <motion.img
-            src="/images/man_n_woman.png"
+            src="/images/man_n_woman.webp"
             className="rounded-xl w-[100px] absolute top-[-10px] right-[-69px]"
             alt=""
             initial={{ scale: 0 }}

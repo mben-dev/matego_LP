@@ -11,7 +11,7 @@ const ProductImage1: React.FC<ProductImage1Props> = ({
   return (
     <div className="flex flex-col gap-4">
       <img
-        src="/images/produit1.png"
+        src="/images/produit1.webp"
         className="w-[400px] cursor-pointer hover:opacity-80 transition-opacity"
         alt=""
         onClick={() => setSelectedProduct("gingembre")}

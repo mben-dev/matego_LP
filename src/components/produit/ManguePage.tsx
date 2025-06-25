@@ -12,7 +12,7 @@ const ManguePage: React.FC<ManguePageProps> = ({ onSetSelectedProduct }) => {
     <div className="w-full h-screen">
       <div className="flex gap-4 px-4 pt-2">
         <motion.img
-          src="/images/matego_big_orange.png"
+          src="/images/matego_big_orange.webp"
           className="w-[650px]"
           alt=""
           initial={{ x: 80, y: 60, scale: 0.5, opacity: 0 }}
@@ -50,8 +50,7 @@ const ManguePage: React.FC<ManguePageProps> = ({ onSetSelectedProduct }) => {
                 stiffness: 400,
                 damping: 10,
                 duration: 0.6,
-              }}
-            >
+              }}>
               Ingredients
             </motion.p>
             <p className="text-[##1D1D1B87] opacity-50 text-sm">
@@ -65,10 +64,9 @@ const ManguePage: React.FC<ManguePageProps> = ({ onSetSelectedProduct }) => {
           <div className="flex gap-4 mt-[-2%]">
             <div
               className="space-y-2"
-              onClick={() => onSetSelectedProduct("gingembre")}
-            >
+              onClick={() => onSetSelectedProduct("gingembre")}>
               <img
-                src="/images/mate_gingembre_sm.png"
+                src="/images/mate_gingembre_sm.webp"
                 className="w-[150px] h-[150px] cursor-pointer hover:opacity-80 transition-opacity"
                 alt=""
               />
@@ -79,10 +77,9 @@ const ManguePage: React.FC<ManguePageProps> = ({ onSetSelectedProduct }) => {
             </div>
             <div
               className="space-y-2"
-              onClick={() => onSetSelectedProduct("hibiscus")}
-            >
+              onClick={() => onSetSelectedProduct("hibiscus")}>
               <img
-                src="/images/mate_hib_sm.png"
+                src="/images/mate_hib_sm.webp"
                 className="w-[150px] h-[150px] cursor-pointer hover:opacity-80 transition-opacity"
                 alt=""
               />
@@ -95,12 +92,12 @@ const ManguePage: React.FC<ManguePageProps> = ({ onSetSelectedProduct }) => {
         </div>
       </div>
       <img
-        src="/images/mangue_emo.png"
+        src="/images/mangue_emo.webp"
         className="absolute left-[-1%] top-[24%] p-0 m-0"
         alt=""
       />
       <img
-        src="/images/orange_emo.png"
+        src="/images/orange_emo.webp"
         className="absolute right-[-1%] bottom-[0.3%] p-0 m-0"
         alt=""
       />

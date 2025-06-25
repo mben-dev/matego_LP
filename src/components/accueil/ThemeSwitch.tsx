@@ -43,8 +43,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           }}
           className={`${
             myTheme == "orange" ? "bg-matego_orange " : "bg-matego_green"
-          }`}
-        ></motion.div>
+          }`}></motion.div>
         <div className="flex items-center space-x-2 hover:cursor-pointer">
           {" "}
           {/* Main Text Animation */}
@@ -67,8 +66,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
             }}
             className={`${
               myTheme == "orange" ? "text-matego_orange" : "text-matego_green"
-            } text-xl max-lg:text-lg`}
-          >
+            } text-xl max-lg:text-lg`}>
             {myTheme == "orange" ? "Mangue, Passion" : "Gingembre"}
           </motion.p>{" "}
           {/* Arrow Animation */}
@@ -88,7 +86,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
             }}
             src={`/images/arrow_${
               myTheme == "orange" ? "mangue" : "gingembre"
-            }.png`}
+            }.webp`}
             alt=""
           />
         </div>
@@ -108,8 +106,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           delay: 1.2,
         }}
         className="ml-24 flex space-x-4 hover:cursor-pointer"
-        onClick={handleThemeSwitch}
-      >
+        onClick={handleThemeSwitch}>
         {" "}
         {/* Secondary Rectangle Animation */}
         <motion.div
@@ -131,8 +128,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           }}
           className={`${
             myTheme == "orange" ? "bg-matego_green" : "bg-matego_orange"
-          }`}
-        ></motion.div>
+          }`}></motion.div>
         {/* Secondary Text Animation */}
         <motion.p
           initial={{
@@ -153,8 +149,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           }}
           className={`${
             myTheme == "orange" ? "text-matego_green" : "text-matego_orange"
-          } text-xl `}
-        >
+          } text-xl `}>
           {myTheme == "orange" ? "Gingembre" : "Mangue, Passion"}
         </motion.p>
       </motion.div>
