@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 /* eslint-disable @next/next/no-img-element */
 
-const BgAcceuil = () => {
+const BgAccueil = () => {
   const [theme, setTheme] = useState("orange");
 
   return (
@@ -33,7 +33,8 @@ const BgAcceuil = () => {
           left: "-208px",
           width: "700px",
           height: "600px",
-        }}>
+        }}
+      >
         <img
           src={`/images/annexe_g_${theme == "orange" ? "orange" : "vert"}.webp`}
           className="w-full h-full object-contain drop-shadow-lg"
@@ -54,7 +55,8 @@ const BgAcceuil = () => {
           ease: "easeOut",
           delay: 0.8,
         }}
-        className="absolute top-[42%] left-1/2 transform -translate-x-1/2  -translate-y-1/2  transition-transform  z-10">
+        className="absolute top-[42%] left-1/2 transform -translate-x-1/2  -translate-y-1/2  transition-transform  z-10"
+      >
         <img
           src={`/images/canette_${theme == "orange" ? "orange" : "vert"}.webp`}
           className="object-contain"
@@ -89,7 +91,8 @@ const BgAcceuil = () => {
           right: "-220px",
           width: "700px",
           height: "600px",
-        }}>
+        }}
+      >
         <img
           src={`/images/annexe_d_${theme == "orange" ? "orange" : "vert"}.webp`}
           className="w-full h-full object-contain drop-shadow-lg"
@@ -100,4 +103,4 @@ const BgAcceuil = () => {
   );
 };
 
-export default BgAcceuil;
+export default BgAccueil;

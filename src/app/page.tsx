@@ -1,18 +1,18 @@
 "use client"; // Add this directive for client-side rendering
+import BgAccueil from "@/components/accueil/BgAccueil";
 import Bienfait from "@/components/accueil/Bienfait";
 import Instagram from "@/components/accueil/Instagram";
 import PourquoiMate from "@/components/accueil/PourquoiMate";
-import React, { useState } from "react";
-import BgAcceuil from "@/components/accueil/BgAcceuil";
+import { useState } from "react";
 
-const AcceuilPage = () => {
+const AccueilPage = () => {
   // Now you can use useState
   const [selectedItem, setSelectedItem] = useState(0);
 
   console.log(selectedItem);
 
-  const acceuilMenu = [
-    { href: "/", label: "Acceuil" },
+  const accueilMenu = [
+    { href: "/", label: "Accueil" },
     { href: "/produit", label: "Pourquoi le Mate ?" },
     { href: "/bienfaits", label: "Les bienfaits du produit" },
     { href: "/instagram", label: "Retrouvez-nous sur Instagram" },
@@ -21,8 +21,8 @@ const AcceuilPage = () => {
   // Function to render different content based on selected item
   const renderContent = () => {
     switch (selectedItem) {
-      case 0: // Acceuil
-        return <BgAcceuil />;
+      case 0: // Accueil
+        return <BgAccueil />;
 
       case 1: // Pourquoi le Mate ?
         return <PourquoiMate />;
@@ -72,7 +72,7 @@ const AcceuilPage = () => {
           aria-label="Navigation des sections"
         >
           <ul className="">
-            {acceuilMenu.map((item, index) => (
+            {accueilMenu.map((item, index) => (
               <li
                 key={`${item.href}-${index}`}
                 className={`flex items-center space-x-2 cursor-pointer transition-colors ${
@@ -95,4 +95,4 @@ const AcceuilPage = () => {
   );
 };
 
-export default AcceuilPage;
+export default AccueilPage;

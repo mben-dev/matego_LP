@@ -1,9 +1,9 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { useNavbarTheme } from "@/context/NavbarContext";
 import TransitionLink from "@/components/TransitionLink";
+import { useNavbarTheme } from "@/context/NavbarContext";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -11,7 +11,7 @@ const Navbar = () => {
   const { navbarTheme } = useNavbarTheme();
 
   const navItems = [
-    { href: "/", label: "Acceuil" },
+    { href: "/", label: "Accueil" },
     { href: "/notre-histoire", label: "Notre Histoire" },
     { href: "/produit", label: "Produit" },
     { href: "/contact", label: "Contact" },
