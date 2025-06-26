@@ -1,7 +1,11 @@
 import React from "react";
 
 interface ScrollingIndicatorProps {
-  notreHistoireContents: any[];
+  notreHistoireContents: Array<{
+    id: number;
+    title: string;
+    content: string;
+  }>;
   currentContent: number;
 }
 
