@@ -31,29 +31,25 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
         {/* Main Rectangle Animation */}
         <motion.div
           initial={{
-            width: "2.5rem",
-            height: "2.5rem",
-            x: 36, // Start at the small rectangle's position (ml-24 = 96px offset - 60px initial offset)
+            opacity: 0,
           }}
           animate={{
-            width: isAnimating ? "2.5rem" : hasMounted ? "5rem" : "2.5rem",
-            height: isAnimating ? "2.5rem" : hasMounted ? "5rem" : "2.5rem",
-            x: isAnimating
-              ? 36 + 60 // Move diagonally towards small rectangle position
-              : hasMounted
-              ? 0
-              : 36,
-            y: isAnimating
-              ? 80 // Move down diagonally
-              : 0,
+            opacity: hasMounted ? 1 : 0,
+            width: isAnimating ? "2.5rem" : "5rem",
+            height: isAnimating ? "2.5rem" : "5rem",
+            x: isAnimating ? 48 : 0, // Move to small rectangle position when animating
+            y: isAnimating ? 40 : 0,
             scale: isAnimating ? 0.9 : 1,
           }}
           transition={{
-            duration: isAnimating ? 0.8 : hasMounted ? 0.8 : 0,
-            ease: "easeInOut",
-            delay: isAnimating ? 0 : hasMounted ? 0.2 : 0,
+            opacity: { duration: 0.3, delay: 0.2 },
+            width: { duration: isAnimating ? 0.8 : 0 },
+            height: { duration: isAnimating ? 0.8 : 0 },
+            x: { duration: isAnimating ? 0.8 : 0 },
+            y: { duration: isAnimating ? 0.8 : 0 },
+            scale: { duration: isAnimating ? 0.8 : 0 },
           }}
-          className={`${
+          className={`w-20 h-20 ${
             myTheme == "orange" ? "bg-matego_orange " : "bg-matego_green"
           }`}></motion.div>
         <div className="flex items-center space-x-2 hover:cursor-pointer">
@@ -62,20 +58,20 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           <motion.p
             initial={{
               opacity: 0,
-              x: -20,
-              scale: 0.8,
             }}
             animate={{
-              opacity: isAnimating ? 0.3 : 1,
-              x: isAnimating ? 60 : 0, // Move with the rectangle
-              y: isAnimating ? 80 : 0, // Move down diagonally
+              opacity: isAnimating ? 0.3 : hasMounted ? 1 : 0,
+              x: isAnimating ? 30 : 0, // Move with the rectangle
+              y: isAnimating ? 40 : 0, // Move down diagonally
               scale: isAnimating ? 0.7 : 1,
               fontSize: isAnimating ? "0.9rem" : "1.25rem",
             }}
             transition={{
-              duration: isAnimating ? 0.8 : 0.6,
-              ease: "easeOut",
-              delay: isAnimating ? 0 : 0.8,
+              opacity: { duration: 0.3, delay: 0.4 },
+              x: { duration: isAnimating ? 0.8 : 0 },
+              y: { duration: isAnimating ? 0.8 : 0 },
+              scale: { duration: isAnimating ? 0.8 : 0 },
+              fontSize: { duration: isAnimating ? 0.8 : 0 },
             }}
             className={`${
               myTheme == "orange" ? "text-matego_orange" : "text-matego_green"
@@ -86,19 +82,18 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           <motion.img
             initial={{
               opacity: 0,
-              rotate: -90,
             }}
             animate={{
-              opacity: isAnimating ? 0.3 : 1,
-              rotate: 0,
-              x: isAnimating ? 60 : 0, // Move with the text
-              y: isAnimating ? 80 : 0, // Move down diagonally
+              opacity: isAnimating ? 0.3 : hasMounted ? 1 : 0,
+              x: isAnimating ? 30 : 0, // Move with the text
+              y: isAnimating ? 40 : 0, // Move down diagonally
               scale: isAnimating ? 0.7 : 1,
             }}
             transition={{
-              duration: isAnimating ? 0.8 : 0.5,
-              ease: "easeOut",
-              delay: isAnimating ? 0 : 1.0,
+              opacity: { duration: 0.3, delay: 0.6 },
+              x: { duration: isAnimating ? 0.8 : 0 },
+              y: { duration: isAnimating ? 0.8 : 0 },
+              scale: { duration: isAnimating ? 0.8 : 0 },
             }}
             src={`/images/arrow_${
               myTheme == "orange" ? "mangue" : "gingembre"
@@ -110,16 +105,12 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
       <motion.div
         initial={{
           opacity: 0,
-          y: 20,
         }}
         animate={{
-          opacity: 1,
-          y: 0,
+          opacity: hasMounted ? 1 : 0,
         }}
         transition={{
-          duration: 0.6,
-          ease: "easeOut",
-          delay: 1.2,
+          opacity: { duration: 0.3, delay: 0.8 },
         }}
         className="ml-24 flex space-x-4 hover:cursor-pointer"
         onClick={handleThemeSwitch}>
@@ -127,47 +118,45 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
         {/* Secondary Rectangle Animation */}
         <motion.div
           initial={{
-            width: "2.5rem",
-            height: "2.5rem",
-            x: -40, // Keep at its final position
+            opacity: 0,
           }}
           animate={{
-            width: isAnimating ? "5rem" : hasMounted ? "2.5rem" : "2.5rem",
-            height: isAnimating ? "5rem" : hasMounted ? "2.5rem" : "2.5rem",
-            x: isAnimating
-              ? -136 // Move diagonally towards main rectangle position
-              : 0,
-            y: isAnimating
-              ? -80 // Move up diagonally
-              : 0,
+            opacity: hasMounted ? 1 : 0,
+            width: isAnimating ? "5rem" : "2.5rem",
+            height: isAnimating ? "5rem" : "2.5rem",
+            x: isAnimating ? -68 : 0, // Move diagonally towards main rectangle position
+            y: isAnimating ? -40 : 0, // Move up diagonally
             scale: isAnimating ? 1.1 : 1,
           }}
           transition={{
-            duration: isAnimating ? 0.8 : hasMounted ? 0.6 : 0,
-            ease: "easeInOut",
-            delay: isAnimating ? 0 : hasMounted ? 1.4 : 0,
+            opacity: { duration: 0.3, delay: 1.0 },
+            width: { duration: isAnimating ? 0.8 : 0 },
+            height: { duration: isAnimating ? 0.8 : 0 },
+            x: { duration: isAnimating ? 0.8 : 0 },
+            y: { duration: isAnimating ? 0.8 : 0 },
+            scale: { duration: isAnimating ? 0.8 : 0 },
           }}
-          className={`${
+          className={`w-10 h-10 ${
             myTheme == "orange" ? "bg-matego_green" : "bg-matego_orange"
           }`}></motion.div>
         {/* Secondary Text Animation */}
         <motion.p
           initial={{
             opacity: 0,
-            x: -15,
-            scale: 0.9,
           }}
           animate={{
-            opacity: isAnimating ? 1 : 1,
-            x: isAnimating ? -136 : 0, // Move with the rectangle diagonally
-            y: isAnimating ? -80 : 0, // Move up diagonally
+            opacity: isAnimating ? 1 : hasMounted ? 1 : 0,
+            x: isAnimating ? -68 : 0, // Move with the rectangle diagonally
+            y: isAnimating ? -40 : 0, // Move up diagonally
             scale: isAnimating ? 1.3 : 1,
             fontSize: isAnimating ? "1.4rem" : "1.25rem",
           }}
           transition={{
-            duration: isAnimating ? 0.8 : 0.5,
-            ease: "easeOut",
-            delay: isAnimating ? 0 : 1.6,
+            opacity: { duration: 0.3, delay: 1.2 },
+            x: { duration: isAnimating ? 0.8 : 0 },
+            y: { duration: isAnimating ? 0.8 : 0 },
+            scale: { duration: isAnimating ? 0.8 : 0 },
+            fontSize: { duration: isAnimating ? 0.8 : 0 },
           }}
           className={`${
             myTheme == "orange" ? "text-matego_green" : "text-matego_orange"
