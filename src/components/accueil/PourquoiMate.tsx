@@ -52,7 +52,7 @@ const PourquoiMate = () => {
               alt={item.alt}
               className={`${
                 selectedItem == index ? "w-[600px]" : "w-[150px] object-contain"
-              } h-[400px] object-cover rounded-lg shadow-lg  hover:scale-105 transition-all duration-300 cursor-pointer`}
+              } h-[400px] object-cover rounded-lg shadow-lg   transition-all duration-300 cursor-pointer`}
               onClick={() => setSelectedItem(index)}
             />
           ))}
