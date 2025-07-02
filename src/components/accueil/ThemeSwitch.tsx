@@ -9,6 +9,12 @@ type ThemeSwitchProps = {
 
 const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
   const [isAnimating, setIsAnimating] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    // Trigger the initial animation after component mounts
+    setHasMounted(true);
+  }, []);
 
   const handleThemeSwitch = () => {
     setIsAnimating(true);
@@ -16,7 +22,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
     setTimeout(() => {
       onSetMyTheme(myTheme == "orange" ? "green" : "orange");
       setIsAnimating(false);
-    }, 400);
+    }, 800);
   };
   return (
     <div className="absolute top-[50%] left-[62%] transform -translate-x-1/2 -translate-y-1/2 z-10">
@@ -27,18 +33,25 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           initial={{
             width: "2.5rem",
             height: "2.5rem",
-            x: -60,
+            x: 36, // Start at the small rectangle's position (ml-24 = 96px offset - 60px initial offset)
           }}
           animate={{
-            width: isAnimating ? "2.5rem" : "5rem",
-            height: isAnimating ? "2.5rem" : "5rem",
-            x: isAnimating ? 80 : 0,
+            width: isAnimating ? "2.5rem" : hasMounted ? "5rem" : "2.5rem",
+            height: isAnimating ? "2.5rem" : hasMounted ? "5rem" : "2.5rem",
+            x: isAnimating
+              ? 36 + 60 // Move diagonally towards small rectangle position
+              : hasMounted
+              ? 0
+              : 36,
+            y: isAnimating
+              ? 80 // Move down diagonally
+              : 0,
             scale: isAnimating ? 0.9 : 1,
           }}
           transition={{
-            duration: isAnimating ? 0.4 : 0.8,
+            duration: isAnimating ? 0.8 : hasMounted ? 0.8 : 0,
             ease: "easeInOut",
-            delay: isAnimating ? 0 : 0.2,
+            delay: isAnimating ? 0 : hasMounted ? 0.2 : 0,
           }}
           className={`${
             myTheme == "orange" ? "bg-matego_orange " : "bg-matego_green"
@@ -53,13 +66,14 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
               scale: 0.8,
             }}
             animate={{
-              opacity: isAnimating ? 0.7 : 1,
-              x: isAnimating ? -30 : 0,
-              scale: isAnimating ? 0.85 : 1,
-              fontSize: isAnimating ? "1rem" : "1.25rem",
+              opacity: isAnimating ? 0.3 : 1,
+              x: isAnimating ? 60 : 0, // Move with the rectangle
+              y: isAnimating ? 80 : 0, // Move down diagonally
+              scale: isAnimating ? 0.7 : 1,
+              fontSize: isAnimating ? "0.9rem" : "1.25rem",
             }}
             transition={{
-              duration: isAnimating ? 0.4 : 0.6,
+              duration: isAnimating ? 0.8 : 0.6,
               ease: "easeOut",
               delay: isAnimating ? 0 : 0.8,
             }}
@@ -75,13 +89,16 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
               rotate: -90,
             }}
             animate={{
-              opacity: 1,
+              opacity: isAnimating ? 0.3 : 1,
               rotate: 0,
+              x: isAnimating ? 60 : 0, // Move with the text
+              y: isAnimating ? 80 : 0, // Move down diagonally
+              scale: isAnimating ? 0.7 : 1,
             }}
             transition={{
-              duration: 0.5,
+              duration: isAnimating ? 0.8 : 0.5,
               ease: "easeOut",
-              delay: 1.0,
+              delay: isAnimating ? 0 : 1.0,
             }}
             src={`/images/arrow_${
               myTheme == "orange" ? "mangue" : "gingembre"
@@ -110,20 +127,25 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
         {/* Secondary Rectangle Animation */}
         <motion.div
           initial={{
-            width: "1.5rem",
-            height: "1.5rem",
-            x: -40,
+            width: "2.5rem",
+            height: "2.5rem",
+            x: -40, // Keep at its final position
           }}
           animate={{
-            width: isAnimating ? "5rem" : "2.5rem",
-            height: isAnimating ? "5rem" : "2.5rem",
-            x: isAnimating ? -120 : 0,
+            width: isAnimating ? "5rem" : hasMounted ? "2.5rem" : "2.5rem",
+            height: isAnimating ? "5rem" : hasMounted ? "2.5rem" : "2.5rem",
+            x: isAnimating
+              ? -136 // Move diagonally towards main rectangle position
+              : 0,
+            y: isAnimating
+              ? -80 // Move up diagonally
+              : 0,
             scale: isAnimating ? 1.1 : 1,
           }}
           transition={{
-            duration: isAnimating ? 0.4 : 0.6,
+            duration: isAnimating ? 0.8 : hasMounted ? 0.6 : 0,
             ease: "easeInOut",
-            delay: isAnimating ? 0 : 1.4,
+            delay: isAnimating ? 0 : hasMounted ? 1.4 : 0,
           }}
           className={`${
             myTheme == "orange" ? "bg-matego_green" : "bg-matego_orange"
@@ -137,12 +159,13 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           }}
           animate={{
             opacity: isAnimating ? 1 : 1,
-            x: isAnimating ? -100 : 0,
-            scale: isAnimating ? 1.2 : 1,
-            fontSize: isAnimating ? "1.25rem" : "1.25rem",
+            x: isAnimating ? -136 : 0, // Move with the rectangle diagonally
+            y: isAnimating ? -80 : 0, // Move up diagonally
+            scale: isAnimating ? 1.3 : 1,
+            fontSize: isAnimating ? "1.4rem" : "1.25rem",
           }}
           transition={{
-            duration: isAnimating ? 0.4 : 0.5,
+            duration: isAnimating ? 0.8 : 0.5,
             ease: "easeOut",
             delay: isAnimating ? 0 : 1.6,
           }}
