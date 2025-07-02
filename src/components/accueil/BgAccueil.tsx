@@ -30,7 +30,7 @@ const BgAccueil = () => {
         className="absolute z-30"
         style={{
           top: "0px",
-          left: "-208px",
+          left: theme !== "orange" ? "-217px" : "-211px",
           width: "700px",
           height: "600px",
         }}
@@ -87,8 +87,8 @@ const BgAccueil = () => {
         }}
         className="absolute transform  transition-transform duration-300 "
         style={{
-          top: "170px",
-          right: "-220px",
+          top: theme !== "orange" ? "176px" : "160px",
+          right: theme == "orange" ? "-226px" : "-208px",
           width: "700px",
           height: "600px",
         }}

@@ -124,8 +124,8 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
             opacity: hasMounted ? 1 : 0,
             width: isAnimating ? "5rem" : "2.5rem",
             height: isAnimating ? "5rem" : "2.5rem",
-            x: isAnimating ? -68 : 0, // Move diagonally towards main rectangle position
-            y: isAnimating ? -40 : 0, // Move up diagonally
+            x: isAnimating ? -120 : 0, // Move diagonally towards main rectangle position
+            y: isAnimating ? -70 : 0, // Move up diagonally
             scale: isAnimating ? 1.1 : 1,
           }}
           transition={{
@@ -146,8 +146,8 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ onSetMyTheme, myTheme }) => {
           }}
           animate={{
             opacity: isAnimating ? 1 : hasMounted ? 1 : 0,
-            x: isAnimating ? -68 : 0, // Move with the rectangle diagonally
-            y: isAnimating ? -40 : 0, // Move up diagonally
+            x: isAnimating ? -120 : 0, // Move with the rectangle diagonally
+            y: isAnimating ? -70 : 0, // Move up diagonally
             scale: isAnimating ? 1.3 : 1,
             fontSize: isAnimating ? "1.4rem" : "1.25rem",
           }}
