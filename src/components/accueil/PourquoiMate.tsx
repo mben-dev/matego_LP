@@ -5,28 +5,9 @@ import { motion } from "framer-motion";
 
 const PourquoiMate = () => {
   const [selectedItem, setSelectedItem] = React.useState(0);
-  const [reboundingItems, setReboundingItems] = React.useState<number[]>([]);
-  const [expandingItem, setExpandingItem] = React.useState<number | null>(null);
 
   const handleImageClick = (index: number) => {
     setSelectedItem(index);
-
-    // Start expansion animation for clicked item
-    setExpandingItem(index);
-
-    // Determine which adjacent items should rebound
-    const adjacentItems: number[] = [];
-    if (index > 0) adjacentItems.push(index - 1); // Left adjacent
-    if (index < carrouselItems.length - 1) adjacentItems.push(index + 1); // Right adjacent
-
-    // Start rebound animation for adjacent items
-    setReboundingItems(adjacentItems);
-
-    // Reset animations after they complete
-    setTimeout(() => {
-      setReboundingItems([]);
-      setExpandingItem(null);
-    }, 400);
   };
 
   const carrouselItems = [
@@ -45,7 +26,7 @@ const PourquoiMate = () => {
   ];
 
   return (
-    <div className="absolute inset-0   z-10 max-w-[1400px] mx-auto pt-20">
+    <div className="absolute inset-0 z-10 max-w-[1400px] mx-auto pt-20">
       <div className="w-full flex space-x-32 h-screen relative">
         <div className="text-primary">
           <h2 className="text-[60px] font-bold  uppercase tracking-tight leading-tight">
@@ -68,12 +49,9 @@ const PourquoiMate = () => {
             <br /> détoxification de l&apos;organisme.
           </p>
         </div>
-        <div className="max-w-[800px] mt-24 flex space-x-2 z-20">
+        <div className="max-w-[900px] mt-24 flex space-x-2 z-20">
           {carrouselItems.map((item, index) => {
-            const isRebounding = reboundingItems.includes(index);
             const isSelected = selectedItem === index;
-            const isExpanding = expandingItem === index;
-
             return (
               <motion.img
                 key={index}
@@ -84,15 +62,10 @@ const PourquoiMate = () => {
                 } h-[400px] object-cover rounded-lg shadow-lg transition-all duration-300 cursor-pointer`}
                 onClick={() => handleImageClick(index)}
                 animate={{
-                  x: isRebounding ? (index < selectedItem ? -35 : 35) : 0,
-                  scaleX: isExpanding ? 1.1 : 1,
-                  scale: isRebounding ? 0.9 : 1,
+                  width: isSelected ? 600 : 150,
                 }}
                 transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20,
-                  duration: 0.4,
+                  delay: isSelected ? 0.038 : 0,
                 }}
               />
             );
