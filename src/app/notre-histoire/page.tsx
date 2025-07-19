@@ -17,18 +17,16 @@ const NotreHistoirePage = () => {
   const { setNavbarTheme } = useNavbarTheme();
 
   useEffect(() => {
-    if ((selectedItem === 0 && currentContent === 0) || selectedItem === 1) {
+    if ((selectedItem === 1 && currentContent === 0) || selectedItem === 0) {
       setNavbarTheme("light");
     } else {
       setNavbarTheme("dark");
     }
   }, [selectedItem, currentContent, setNavbarTheme]);
 
-  console.log(selectedItem, currentContent);
-
   const notreHistoireMenu = [
-    { href: "/", label: "Notre histoire" },
     { href: "/produit", label: "Qui sommes nous ? Deux potes." },
+    { href: "/", label: "Notre histoire" },
   ];
 
   // Content for the first menu item (Notre histoire) - 3 different contents
@@ -52,7 +50,7 @@ const NotreHistoirePage = () => {
 
   // Handle scroll to change content for the first menu item
   useEffect(() => {
-    if (selectedItem !== 0) return; // Only apply scroll logic to first menu item
+    if (selectedItem !== 1) return; // Only apply scroll logic to first menu item
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -128,7 +126,7 @@ const NotreHistoirePage = () => {
       <div className="h-screen w-full relative">
         <div className="fixed inset-0 z-10 flex ">
           {/* Dynamic content that changes based on menu selection and scroll */}
-          {selectedItem === 0 ? (
+          {selectedItem === 1 ? (
             // First menu item content (changes with scroll)
             <div className="min-w-[1330px] mx-auto pt-[13%] ">
               {currentContent === 0 && <ContentOne />}
@@ -146,7 +144,7 @@ const NotreHistoirePage = () => {
           )}
         </div>{" "}
         {/* Fixed UI elements */}
-        {selectedItem === 0 && (
+        {selectedItem === 1 && (
           <>
             {" "}
             <motion.div
@@ -210,7 +208,7 @@ const NotreHistoirePage = () => {
           setSelectedItem={setSelectedItem}
         />
         {/* Add some height to enable scrolling for the first menu item */}
-        {selectedItem === 0 && (
+        {selectedItem === 1 && (
           <div className="h-[300vh] pointer-events-none" />
         )}
       </div>

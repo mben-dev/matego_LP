@@ -24,10 +24,10 @@ const HistoireMenu: React.FC<HistoireMenuProps> = ({
             key={`${item.href}-${index}`}
             className={`flex justify-end items-center space-x-2 cursor-pointer transition-colors ${
               selectedItem === index
-                ? selectedItem === 1
+                ? selectedItem === 0
                   ? "text-white font-bold"
                   : "text-primary font-semibold"
-                : selectedItem === 1
+                : selectedItem === 0
                 ? "text-white hover:font-bold"
                 : "text-secondary hover:text-primary hover:font-semibold"
             }`}
@@ -36,7 +36,7 @@ const HistoireMenu: React.FC<HistoireMenuProps> = ({
             <p>{item.label}</p>
             <p
               className={`${
-                selectedItem === 1 ? "text-white" : "text-secondary"
+                selectedItem === 0 ? "text-white" : "text-secondary"
               } text-xl`}
             >
               {selectedItem == index ? "—" : "•"}
