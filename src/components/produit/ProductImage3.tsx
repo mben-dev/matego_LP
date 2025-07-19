@@ -12,16 +12,16 @@ const ProductImage3: React.FC<ProductImage3Props> = ({
     <div className="flex flex-col gap-2">
       <img
         src="/images/produit3.webp"
-        className="w-[400px] h-[240px] cursor-pointer hover:opacity-80 transition-opacity"
+        className="w-[400px] h-[240px] cursor-pointer hover:opacity-80 transition-opacity blur-sm"
         alt=""
         onClick={() => setSelectedProduct("hibiscus")}
       />
       <p className="text-[#1D1D1B87]">Viendra plus tard</p>
-      <p className="text-3xl font-semibold ">
+      {/* <p className="text-3xl font-semibold ">
         MATÉ
         <br />
         <span className="text-matego_red">Hibiscus Fraise Des Bois</span>
-      </p>
+      </p> */}
     </div>
   );
 };
